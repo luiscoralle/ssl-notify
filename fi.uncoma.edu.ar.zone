@@ -1,0 +1,631 @@
+root@cachil:~# cat /etc/bind/master/fi.uncoma.edu.ar.zone
+$ORIGIN .
+$TTL 3600	; 1 hour
+fi.uncoma.edu.ar		IN SOA	cachil.uncoma.edu.ar. root.uncoma.edu.ar. (
+				2025030601 ; serial
+				1800       ; refresh (30 minutes)
+				900        ; retry (15 minutes)
+				1209600     ; expire (1 week)
+				1200       ; minimum (20 minutes)
+				)
+			NS	cachil.uncoma.edu.ar.
+			NS	ns1.criba.edu.ar.
+			NS	ns2.criba.edu.ar.
+			PTR	localhost.
+			MX    1    ASPMX.L.GOOGLE.COM.
+			MX    5    ALT1.ASPMX.L.GOOGLE.COM.
+			MX    5    ALT2.ASPMX.L.GOOGLE.COM.
+			MX    10   ALT3.ASPMX.L.GOOGLE.COM.
+			MX    10   ALT4.ASPMX.L.GOOGLE.COM.
+
+;_acme-challenge.sub.fi.uncoma.edu.ar.    IN  TXT  "-NdRSG_j5LgLJ7RfPt1481pOpaKFgUdikNFDh15Iafo"
+
+@    IN  TXT  "v=spf1 include:_spf.google.com ~all"
+google._domainkey.fi.uncoma.edu.ar    IN  TXT  "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSFR7c9gpOjtlvbTSFs+qtTlHHBLa5OzmIZOOsH4M36KJoKNN1wykzSgKxJxBdBLsJEmsLxg68Lvv5kzNJrCjN6uRICsx8BiudqoXRep+wPo59clJsznNyN5zZ0c2a93yR7dgHboBxczFhLl+YdcccVIDDCLibxzeIDNYwbTT86wIDAQAB"
+@    IN  TXT  "v=DMARC1; p=none; rua=mailto:postmaster@fi.uncoma.edu.ar"
+
+$ORIGIN fi.uncoma.edu.ar.
+cachil			A	170.210.83.94
+ns1			A	170.210.83.94
+;cachil			A	200.59.229.170
+
+
+
+
+;www.fi.uncoma.edu.ar.			IN	CNAME	faiweb.uncoma.edu.ar.
+FW32CV77TC63		CNAME	gv-RRNZNTG7Z2VW7RSY4RSVNMJIHO2VHHZ2YGA3GG2YQGLISXRUXYPA.domainverify.googlehosted.com.
+
+est    IN	MX	10	ASPMX.L.GOOGLE.COM.
+diplo    IN	MX	10	ASPMX.L.GOOGLE.COM.
+esrn17    IN	MX	10	ASPMX.L.GOOGLE.COM.
+
+
+; departamento ingenieria de computadoras via github
+dic 			IN      CNAME   dicfi.github.io.
+dicfi.github.io.      	IN      A       204.232.175.78
+; sistemas embebidos via github
+se 			IN      CNAME   zrafa.github.io.
+zrafa.github.io.      	IN      A       204.232.175.78
+
+
+; Laboratorio de Tecnologias Informaticas
+labti			A	170.210.83.83
+
+; web y usuario para alojar archivos de faiweb.uncoma.edu.ar
+; No iria mas despues de la migracion a www.fi.uncoma.edu.ar 
+; faiweb			A	170.210.83.83
+
+; Prueba repositorios 
+mirror			A	170.210.83.88
+
+; Oso hpc
+hpc			A	170.210.83.83
+
+; Encuestas
+encuesta		A	170.210.83.83
+encuestas		A	170.210.83.83
+encuestafaea		A	170.210.83.83
+
+; Proyecto Divulgando computacion en la escuela 
+divulgando		A	170.210.83.83
+
+; Proyecto Con la escuela media programamos robots 
+robots			A	170.210.83.83
+
+; Proyecto Extension Daniel Dolz - reciclajepc
+reciclajepc			A	170.210.83.83
+
+; gissrv : servidor del proyecto de Agustina - tambien es 10.0.0.219
+gissrv			A	170.210.83.83
+gisproject		A	170.210.83.83
+
+; Nagios interno y externo
+nagios1			A	170.210.83.83
+
+pedco			A	170.210.81.250
+
+; Prueba GSites
+wiki                     IN      CNAME   ghs.googlehosted.com.
+
+; Prueba OVPN Server luyo
+vpn		A	170.210.83.90
+
+; Prueba Hornero proyecto de extension de Pablo Kogan e Ingrid
+;hornero 	IN      CNAME   hornero.cortitoyalpie.com.ar.
+;hornero.cortitoyalpie.com.ar. IN      A       201.235.253.207
+libretto 	IN      CNAME   libretto.cortitoyalpie.com.ar.
+libretto.cortitoyalpie.com.ar. IN      A       201.235.253.207
+
+
+; Grupo Interdisciplinario en Sistemas Embebidos
+;gise 			IN      CNAME   gisefi.github.io.
+;gisefi.github.io.      	IN      A       204.232.175.78
+gise		A	170.210.83.83
+
+; Maquina virtual de Miriam Lechner para tecnicatura
+asimov		A	170.210.83.83
+
+; Maquina virtual para Arquitecturas y Organizacion de Computadoras 1
+; Rafa - Rodo - Luyo
+debianmips		A	170.210.83.88
+debianmips2		A	170.210.83.83
+
+; pcnegra - Marina - javi - ingenieria de computadoras of 8
+idc		A	170.210.83.83
+
+
+; Practica teoria y diseno de bbdd - Agustina Buccella
+practicabdmysql		A	170.210.83.88
+practicabdpostgres	A	170.210.83.88
+
+; Nuevo Tecnicatura Server - Pablo Kogan
+meta		A	170.210.83.83
+hornero		A	170.210.83.88
+
+; Web Chos Malal: Framework e interoperabilidad - Trabajo Final Tecnicatura - Marcos Cruz y Mario Moya
+webchosma		A	170.210.83.83
+
+; Serviceproject - Andres Flores
+serviceproject		A	170.210.83.83
+
+; MMICCARM - Marcelo Kazalukian
+mmiccarm		A	170.210.83.83
+
+; Protocola - Federico Amigone y Guillermo Grosso
+protocola		A	170.210.83.88
+redsocorrista		A	170.210.83.88
+
+; ideunco - Maria Jose Rotter/Luis Reynoso
+ideunco		A	170.210.83.88
+
+; UNCSurveys - Silvina Roa/Luis Reynoso
+uncsurveys	A	170.210.83.88
+
+; toba - Andrea Granados
+toba	A	170.210.83.88
+
+; wiki-dspace - Cristhian Castro/Jeremias Arias/Agustina Buccella
+wikifai	A	170.210.83.88
+
+; wp1 - luyo
+wp1	A	170.210.83.83
+
+
+; est - luyo
+est	A	170.210.83.83
+
+; Appmovil - Pablo Kogan
+gukena	A	170.210.83.88
+conu	A	170.210.83.88
+
+; crowd - German Braun
+crowd	A	170.210.83.88
+crowd-test	A	170.210.83.88
+crowd-core	A	170.210.83.88
+crowd-app	A	170.210.83.88
+
+; aulario - Valeria Zoratto
+aulario		A	170.210.83.88
+
+; uncoactiva - Valeria Zoratto
+uncoactiva		A	170.210.83.88
+uncoactiva-back		A	170.210.83.88
+
+
+
+; Museo - Agustina Buccella
+museoadministracionuncoma		A	170.210.83.88
+museoadministracionanelo		A	170.210.83.88
+museoadministracionroca			A	170.210.83.88
+museoadministracionstic			A	170.210.83.88
+
+; gns3 - Marina Moran
+gns3		A	170.210.83.88
+
+; gns3 - Documentacion de Red FAI
+gnstic		A	170.210.83.88
+
+
+; time - luyo
+ntp	A	170.210.83.83
+
+; apps por secundarios - Jorge Rodriguez
+appsporsecundarios	A	170.210.83.88
+
+; voip - luyo
+voip	A	170.210.83.82
+
+; Sistema de Gestion de Programas - Silvina Roa/Natalia Baeza/Gabriela Aranda
+sgp	A	170.210.83.88
+
+; Grupo OAT
+oat	A	170.210.83.118
+
+; Realidad Aumentada - Carina Fracchia
+realidadaumentada	A	170.210.83.88
+
+; Unymap - Cristian Mora
+unymap	A	170.210.83.88
+
+;Administracion de sistemas Tec. web - Federico Uribe 
+astsl	A	170.210.83.88
+
+; APDH - Daniela Manrique
+apdh	A	170.210.83.88
+
+; Formularios datos - luyo,ale
+formulario	A	170.210.83.88
+
+; Enlace FAI-APUNC
+apunc-ap	A	170.210.83.88
+apunc-st	A	170.210.83.88
+apunc-srv	A	170.210.83.88
+
+; Posible www-fi
+ww	A	170.210.83.88
+
+; Administracion de sistemas avanzados  - Miriam Lechner 
+asatsl	A	170.210.83.88
+aystsl	A	170.210.83.83
+
+; Ciudad Mujer - Daniela Manrique / Lucas Perez 
+ciudadmujer	A	170.210.83.88
+
+; Esports - Juan Ignacio Carretero 
+esports	A	170.210.83.88
+
+; Edimbrujo - Angela Oyarzun 
+edimbrujo	A	170.210.83.88
+
+; ldap ppal 
+auth	A	170.210.83.83
+
+; Internet Seguro - Jorge Rodriguez/Franco Ojeda
+internetseguro	A	170.210.83.88
+
+
+;ns2	IN	A	170.210.83.84
+;IN	 NS      ns2.fi.uncoma.edu.ar.
+
+; test temperatura 
+t	A	170.210.83.83
+
+; Update robots n6
+updaten6	A	170.210.83.88
+
+; Proyecto extension Voluntariado - Martin Moreira
+voluntariado	A	170.210.83.88
+
+; Becario German Braun - Christian Gimenez
+mm	A	170.210.83.88
+
+; Tesis Carolina Celeste
+mccsoft	A	170.210.83.88
+
+
+; Test sosunc
+sosunc			A	170.210.80.98
+
+; GSites
+pm                     IN      CNAME   ghs.googlehosted.com.
+
+; Primera web ssl
+test1-ssl	A	170.210.83.88
+test2-ssl	A	170.210.83.88
+test3-ssl	A	170.210.83.88
+test4-ssl	A	170.210.83.88
+test5-ssl	A	170.210.83.88
+
+; FASINPAT - Elias Henriquez/Pablo Kogan
+fasinpat A       170.210.83.83
+
+; Analysis - Matias Polla/Agustina Buccella
+analysis A       170.210.83.88
+
+; museo - Agustina Buccella
+museo			A       170.210.83.88
+museoconsulta		A	170.210.83.88
+
+; Maestria CC - Agustina Buccella
+maestriacc A       170.210.83.88
+
+; DDHH - Agustina Buccella
+ddhh A       170.210.83.88
+
+; Debian FAI - Ale/Luyo
+debianfai A       170.210.83.88
+debianfai2 A       170.210.83.88
+
+; Conceptos BBDD - Marcos Cruz
+conceptosbbdd A       170.210.83.88
+
+; Redirigir sitio www
+www	A	170.210.83.88
+@  A       170.210.83.88
+
+
+; rec - Fede Amigone
+rec	A	170.210.83.88
+
+; Incuba - Pablo Kogan
+incuba	A	170.210.83.88
+nix	A	170.210.83.88
+hornero2	A	170.210.83.88
+cefai	A	170.210.83.88
+wene A       170.210.83.88
+dxb A       170.210.83.88
+kimen A       170.210.83.88
+hacedores A       170.210.83.88
+juntar A       170.210.83.88
+juntar-test A       170.210.83.88
+madriguera A       170.210.83.88
+pulsar A       170.210.83.88
+aventura A       170.210.83.88
+mapumedia A       170.210.83.88
+interculturalidad A       170.210.83.88
+
+
+; Red de Auditores - Marcelo Amaolo
+redauditores	A	170.210.83.88
+
+; Pruebas jornadas de robotica
+;jornadasargentinasderobotica.com.ar.	3600	IN	TXT	"google-site-verification=mtWFlDeyV-KLB6dD1smHiHT2rYLkkISvyGXl2QJ8Di4"
+
+; teyet2020 - congreso sobre Tecnologia en Educacion
+teyet2020	A	170.210.83.88
+
+; Para usar las vm multiusuario debian aulas
+aularemota	A	170.210.83.88
+
+; Para inventario oat
+oatinventario	A	200.85.182.46	
+
+; vm rdc
+rdc	A	170.210.83.88
+
+; vdc - jitsi.org
+vc	A	170.210.83.88
+meet	A	170.210.83.85
+
+; rc - itsi.org
+rd	A	170.210.83.88
+
+; ld - claudio vaucheret
+ld	A	170.210.83.88
+
+; guacamole - luyo
+guacamole	A	170.210.83.88
+g	A	170.210.83.88
+
+
+; bbddtecnicatura  - Maria Jose Roter/Viviana Sanchez <--- borrarrr
+bbddtecnicatura	A	170.210.83.83
+
+; gw2 pfense - otra salida a internet por 170.210.83.82/28
+gw2	A	170.210.83.90
+
+; pwd - Prog.web.dinamica - Natalia Baeza
+pwa	A	170.210.83.88
+
+; situassl - Sergio Cotal
+situassl	A	170.210.83.83
+
+; prueba calendar - luyo
+calendar 			IN      CNAME   ghs.googlehosted.com.
+
+
+; stream - luyo
+streaming	A	170.210.83.83
+
+; lamp-tec - majo/viviana
+lamptec	A	170.210.83.88
+
+
+; escuela1 - luyo
+escuela1	A	131.0.129.167
+lazos	A	190.185.101.180
+delaguardia	A	45.178.97.20
+contenidosguardia	A	170.210.83.92
+
+; bbb - luyo/ale
+bbb	A	170.210.83.91
+
+; escuelas - luyo/ale
+cpem54	A	170.210.83.88
+cpem12	A	170.210.83.88
+cpem46	A	170.210.83.88
+cpem49	A	170.210.83.88
+cpem48	A	170.210.83.88
+esrn17	A	170.210.83.88
+cpem71	A	170.210.83.88
+
+; bw - luyo/ale
+bw	A	170.210.83.88
+
+; aula-ssh - javier balladini
+aula-ssh	A	170.210.83.88
+
+; camaras edificio FAI
+cams		A	170.210.83.88
+
+
+
+; bot - luyo
+b	A	170.210.83.88
+luyo	A	201.254.180.195
+
+; app covid - javier balladini
+covindex	A	170.210.83.88
+covindexcloud	A	170.210.83.88
+
+; Programacion de sistemas embebidos - Rafael Zurita
+pse		A	170.210.83.93
+
+; OpenData - Luis Reynoso
+opendata		A	170.210.83.88
+opendatapublish		A	170.210.83.88
+
+; Soporte - Luyo/Ale
+soporte			A	170.210.83.88
+
+; Bigdata - Agustina Buccella
+servidorbigdata			A	170.210.83.88
+
+; redestec - noda/huaiquil
+redes2023			A	170.210.83.88
+
+; diplo - diplo
+diplo				A	170.210.83.83
+
+; ijan docker - Viviana Sanchez
+ijandev				A	170.210.83.88
+ijandev-test			A	170.210.83.88
+
+; c4 - Federico Amigone/Jorge Rodriguez
+c4				A	170.210.83.88
+comonosfue			A	170.210.83.88
+
+; GENis - Agustina Buccella - Sadosky
+genis				A	170.210.83.88
+
+; Moodle - Sadosky
+moodle				A	170.210.83.88
+
+
+; Moodle - Sadosky
+moodle2				A	170.210.83.88
+
+; eglea10 - luyo
+eglea10				A	170.210.83.88
+
+; davitel - luyo
+davitel				A	200.85.182.166
+
+; cpem26 - pablo/jorge/vivi
+manosalaobra			A	170.210.83.88
+wp				A	170.210.83.88
+
+; ovpn-server-new - luyo
+vpn2				A	170.210.83.82
+
+; sitio-fai - vivi
+;w2				A	170.210.83.88
+w2	IN	CNAME	www.fi.uncoma.edu.ar.
+
+; pasayo - fede amigone
+pasayo				A	170.210.83.88
+pasayotexto				A	170.210.83.88
+pasayotextoback				A	170.210.83.88
+
+; bule - pablo kogan
+bule				A	170.210.83.88
+controlz				A	170.210.83.88
+holamundo				A	170.210.83.88
+
+; museo historico del riego - vivi
+mhr				A	170.210.83.88
+
+; congreso pablo kogan
+weed2022			A	170.210.83.88
+weed2023			A	170.210.83.88
+weed2024			A	170.210.83.88
+
+; speed test schools - Luyo - 21/09/2022
+bw-test-escuela			A	170.210.83.88
+
+; speed test FAI - Luyo - 12/07/2022
+st			A	170.210.83.88
+
+
+; Entrada para dnswl.org - Luyo - 23/09/2022
+_token._dnswl.fi.uncoma.edu.ar.		IN	TXT	"l1t772w8gx7ya397b2p8wi8vpizd3erq"
+
+; Algoritmo control congestion - marina moran - 27/12/2022
+acc			A	170.210.83.88
+
+; Formulario2 docker
+formulario2			A	170.210.83.88
+
+; Redacta resoluciones FAIF
+redacta			A		170.210.83.88
+redacta-dev			A		170.210.83.88
+redactadb			A		170.210.83.88
+
+; OPEN WIFI
+openwifi			A		170.210.83.88
+monitor				A		170.210.83.88
+
+; camara i1
+i1			A		170.210.83.88
+
+; OpenDataGral - luyo
+mapas-r			A		170.210.83.88
+
+; Museo de la patagonia - A.Bucella/J.Porfiri
+museosdelapatagonia			A		170.210.83.88
+
+; Redausa
+redausa			A		170.210.83.88
+;redausa                     IN      CNAME   redausa.edu.ar.
+;redausa.edu.ar.        IN      A       170.210.83.88
+
+; prueba meshcentral - Luyo - 12/07/2022
+mc			A	170.210.83.88
+
+; JADiCC 2023 - Jorge Rodriguez - 06/07/2023
+jadicc			A	186.33.211.18
+
+; CEFAI
+ventas.cefai			A		170.210.83.88
+cursos.cefai			A		170.210.83.88
+
+; VPN odor
+vpn-odor			A		170.210.83.82
+
+; Etherpad - Miriam
+etherpad			A		170.210.83.88
+
+
+; streaming prueba
+streaming-test	A	170.210.83.88
+
+; streaming faitube
+faitube		A	170.210.83.88
+
+; mesh central support - luyo - 04/09/2023
+support		A	170.210.83.88
+support-luyo		A	170.210.83.88
+
+; Observatorio Electoral - Pablo Kogan - 08/09/2023
+observatorioelectoral		A	170.210.83.88
+observatorioelectoral-admin	A	170.210.83.88
+
+; Resultados elecciones - Pablo Kogan - 15/09/2023
+resultados		A	170.210.83.88
+
+; Practiva RDC - Marina Moran - 28/09/2023
+practica-rdc		A	170.210.83.88
+
+
+; Entrada para wildcard letsencrypt - Luyo - 17/11/2023
+_acme-challenge.fi.uncoma.edu.ar.	IN	TXT	"DsTnfzaTVeYMmEu5hOd8UA1DQQYvEyz3Hc7Wz7Ma28g"
+
+; luyo - 27/12/2023
+dock-1		A	200.85.182.46
+dock-2		A	170.210.83.88
+dock-3		A	170.210.83.88
+dock-4		A	170.210.83.88
+wp-test		A	170.210.83.88
+
+; Cartelera informativa de novedades - Luyo - 22/02/2024
+novedades		A	170.210.83.88
+
+; Giisco - Ale - 04/03/2024
+giisco		A	170.210.83.88
+
+;Ruteo - Nahue - 27/03/2024
+ruteo		A	170.210.83.88
+
+;Geonode - Ale - 27/05/2024 - Luis Reynoso
+geonode		A	170.210.83.88
+geonode2		A	170.210.83.88
+
+;Ale - 21/08/2024 - Coco Rodriguez
+cr		A	170.210.83.88
+
+; Ale - 22/08/2024 - para guacamole oficina remota
+oficinaremota		A	170.210.83.88
+
+;ic - Nahue - 02/09/2024 - cms para Ic 
+ic		A	170.210.83.88
+
+;chacha - Ale - 20/09/2024 - para Rafa debian mips 
+chacha		A	170.210.83.88
+
+;oficina digital test - luyo - 24/09/2024 - para la Universidad
+oficinadigital		A	170.210.83.88
+
+;prologforkids - luyo - 24/09/2024 - Cristian Gimenez Proy.Extension
+prologforkids		A	170.210.83.88
+
+
+;whisper - 07/10/2024 - Luyo - Whisper audio to txt desde el cliente
+whisper		A	170.210.83.83
+
+;aulai1 - 05/11/2024 - Ale - Camara aula i1
+aula-i1		A	170.210.83.88
+
+;overleaf fai - 19/11/2024 - Laura Cechi
+overleaf		A	170.210.83.88
+
+;whisper.sub.fi.uncoma.edu.ar - Prueba de certificado ssl *
+whisper.sub	A	170.210.83.83
+
+;next cloud.sub.fi.uncoma.edu.ar - Prueba de certificado ssl *
+siguientenube.sub	A	170.210.83.83
+cloud.sub		A	170.210.83.83
+cloud			A	170.210.83.88
+
+;overleaf fai - 19/11/2024 - Laura Cechi
+matomo		A	170.210.83.88
+
