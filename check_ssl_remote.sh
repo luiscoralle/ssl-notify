@@ -23,7 +23,7 @@ while IFS= read -r DOMAIN; do
     fi
 
     # Obtener el certificado del dominio remoto
-    EXPIRATION_DATE=$(echo | openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
+    EXPIRATION_DATE=$(echo | timeout 5 openssl s_client -servername $DOMAIN -connect $DOMAIN:443 2>/dev/null | openssl x509 -noout -enddate | cut -d= -f2)
 
     if [ -z "$EXPIRATION_DATE" ]; then
         echo "⚠️ No se pudo obtener el certificado para $DOMAIN. Verifica que el dominio esté accesible."
